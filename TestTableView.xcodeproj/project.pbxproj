@@ -13,7 +13,10 @@
 		4905B3231B82D80300169869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4905B3211B82D80300169869 /* Main.storyboard */; };
 		4905B3251B82D80300169869 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4905B3241B82D80300169869 /* Images.xcassets */; };
 		4905B3341B82D80300169869 /* TestTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4905B3331B82D80300169869 /* TestTableViewTests.m */; };
-		4905B33F1B83342200169869 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4905B33E1B83342200169869 /* MyCell.m */; };
+		4905B33F1B83342200169869 /* TimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4905B33E1B83342200169869 /* TimeCell.m */; };
+		49F663201B841AA700FD99C1 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = 49F6631F1B841AA700FD99C1 /* call.json */; };
+		49F663261B84559600FD99C1 /* ReadJsonfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F663251B84559600FD99C1 /* ReadJsonfile.m */; };
+		49F6632A1B85626800FD99C1 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F663291B85626800FD99C1 /* Service.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,13 @@
 		4905B32D1B82D80300169869 /* TestTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4905B3321B82D80300169869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4905B3331B82D80300169869 /* TestTableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewTests.m; sourceTree = "<group>"; };
-		4905B33D1B83342200169869 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
-		4905B33E1B83342200169869 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		4905B33D1B83342200169869 /* TimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeCell.h; sourceTree = "<group>"; };
+		4905B33E1B83342200169869 /* TimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeCell.m; sourceTree = "<group>"; };
+		49F6631F1B841AA700FD99C1 /* call.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call.json; sourceTree = "<group>"; };
+		49F663241B84559600FD99C1 /* ReadJsonfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadJsonfile.h; path = TestTableView/ReadJsonfile.h; sourceTree = "<group>"; };
+		49F663251B84559600FD99C1 /* ReadJsonfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadJsonfile.m; path = TestTableView/ReadJsonfile.m; sourceTree = "<group>"; };
+		49F663281B85626800FD99C1 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		49F663291B85626800FD99C1 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		4905B30B1B82D80300169869 = {
 			isa = PBXGroup;
 			children = (
+				49F663271B848D2F00FD99C1 /* Service */,
 				4905B3161B82D80300169869 /* TestTableView */,
 				4905B3301B82D80300169869 /* TestTableViewTests */,
 				4905B3151B82D80300169869 /* Products */,
@@ -82,8 +91,8 @@
 		4905B3161B82D80300169869 /* TestTableView */ = {
 			isa = PBXGroup;
 			children = (
-				4905B33D1B83342200169869 /* MyCell.h */,
-				4905B33E1B83342200169869 /* MyCell.m */,
+				4905B33D1B83342200169869 /* TimeCell.h */,
+				4905B33E1B83342200169869 /* TimeCell.m */,
 				4905B31B1B82D80300169869 /* AppDelegate.h */,
 				4905B31C1B82D80300169869 /* AppDelegate.m */,
 				4905B31E1B82D80300169869 /* ViewController.h */,
@@ -100,6 +109,7 @@
 			children = (
 				4905B3181B82D80300169869 /* Info.plist */,
 				4905B3191B82D80300169869 /* main.m */,
+				49F6631F1B841AA700FD99C1 /* call.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -119,6 +129,17 @@
 				4905B3321B82D80300169869 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49F663271B848D2F00FD99C1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				49F663241B84559600FD99C1 /* ReadJsonfile.h */,
+				49F663251B84559600FD99C1 /* ReadJsonfile.m */,
+				49F663281B85626800FD99C1 /* Service.h */,
+				49F663291B85626800FD99C1 /* Service.m */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4905B3231B82D80300169869 /* Main.storyboard in Resources */,
+				49F663201B841AA700FD99C1 /* call.json in Resources */,
 				4905B3251B82D80300169869 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,9 +243,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4905B3201B82D80300169869 /* ViewController.m in Sources */,
-				4905B33F1B83342200169869 /* MyCell.m in Sources */,
+				49F663261B84559600FD99C1 /* ReadJsonfile.m in Sources */,
+				4905B33F1B83342200169869 /* TimeCell.m in Sources */,
 				4905B31D1B82D80300169869 /* AppDelegate.m in Sources */,
 				4905B31A1B82D80300169869 /* main.m in Sources */,
+				49F6632A1B85626800FD99C1 /* Service.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +436,7 @@
 				4905B3391B82D80300169869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4905B33A1B82D80300169869 /* Build configuration list for PBXNativeTarget "TestTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +445,7 @@
 				4905B33C1B82D80300169869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

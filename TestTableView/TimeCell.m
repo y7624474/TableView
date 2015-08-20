@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 TWer . All rights reserved.
 //
 
-#import "MyCell.h"
+#import "TimeCell.h"
 
-@implementation MyCell
+@implementation TimeCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -20,7 +20,6 @@
     if (self) {
         // Initialization code
         self.nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(270, 10, 40, 20)];
-//        self.detailTextLabel=[[ui]]
         [self addSubview:self.nameLabel];
     }
     return self;
@@ -29,8 +28,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

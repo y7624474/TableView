@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Service.h"
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic) NSMutableArray *dataList;
 @property (nonatomic) UITableView *callTableView;
-
+//+(NSDictionary*)dictionaryWithContentsOfJSONString:(NSString*)fileLocation;
 @end
 

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyCell : UITableViewCell
+@interface TimeCell : UITableViewCell
 @property UILabel *nameLabel;
 @end
