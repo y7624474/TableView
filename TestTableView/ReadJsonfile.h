@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CallHistoryMapping.h"
 
 @interface ReadJson : NSObject
-+(NSMutableArray*)localfileWithContentsOfJSONString:(NSString*)fileLocation;
+
+@property CallHistoryMapping *callHistoryMapping;
+
+-(NSMutableArray*)localfileWithContentsOfJSONString:(NSString*)fileLocation;
 +(void)deleteWithContentsOfJSONString:(NSString*)fileLocation Index:(NSUInteger) index;
 @end

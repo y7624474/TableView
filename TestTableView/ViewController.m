@@ -6,7 +6,7 @@
 {
     NSMutableArray *information;
     Service *service;
-    LableMod *lableinfo;
+    UIActivityIndicatorView *activityIndicator;
 }
 @end
 
@@ -16,25 +16,71 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     service=[Service new];
-    [self lableInit];
-//    information= [service readJson:@"call.json"];
-    information=[service urlJson:@"http://www.aliexprice.com/callhistory.index"];
-    CGRect frame=CGRectMake(8, 30, 350, 500);
+    
+    information= [service readJson:@"call.json"];
+    
+    [self initView];
+
+}
+-(void)initView{
+    
+    CGRect frame=CGRectMake(8, 65, 350, 500);
     self.callTableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     self.callTableView.dataSource = self;
     self.callTableView.delegate = self;
+    
+    CGRect swichframe=CGRectMake(250, 30, 50, 25);
+    self.switchbtn=[[UISwitch alloc] initWithFrame:swichframe];
+    [self.switchbtn addTarget: self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    
+    activityIndicator = [[UIActivityIndicatorView alloc]
+                         initWithActivityIndicatorStyle:
+                         UIActivityIndicatorViewStyleGray];
+    activityIndicator.center =self.view.center;
+    activityIndicator.hidden =YES;
+    [self.view addSubview:activityIndicator];
+    
+    
+    [self.view addSubview:self.switchbtn];
     [self.view addSubview:self.callTableView];
-
+   
 }
 
--(void)lableInit
-{
-    lableinfo=[LableMod new];
-    lableinfo.strtel=@"phonenumber";
-    lableinfo.strfrom=@"location";
-    lableinfo.strtime=@"calltime";
+- (void) switchValueChanged:(id)sender{
+    if (!self.switchbtn.on) {
+        [information removeAllObjects];
+        information= [service readJson:@"call.json"];
+    }
+    else{
+        [information removeAllObjects];
+        
+        [activityIndicator startAnimating];
+        
+        [service urlJson:@"http://www.aliexprice.com/callhistory.index"
+                            AsynBack:^(NSURLResponse *response, NSData *data, NSError *error){
+                                if (error) {
+                                    NSLog(@"Httperror:%@", error.localizedDescription);
+                                }else{
+                                    __autoreleasing NSError* error = nil;
+                                    id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+                                    
+                                    CallHistoryMapping *_callHistoryMapping = [[CallHistoryMapping alloc]initWithPhoneNumber:@"phonenumber" And:@"location" And:@"calltime"];
+                                    
+                                    information=[_callHistoryMapping mappingCallHistoryArray:result];
+                                    [self.callTableView reloadData];
+                                   
+//                                    [activityIndicator stopAnimating];
+                                }
+                            }
+                     ];
+    }
+     [self.callTableView reloadData];
 }
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -49,9 +95,11 @@
     }
     NSUInteger row = [indexPath row];
 
-    cell.textLabel.text = [[information valueForKey:lableinfo.strtel] objectAtIndex:row];
-    cell.detailTextLabel.text = [[information valueForKey:lableinfo.strfrom] objectAtIndex:row];
-    cell.timeLabel.text=[[information valueForKey:lableinfo.strtime] objectAtIndex:row];
+    CallHistory *callHistory = (CallHistory*)[information objectAtIndex:row];
+    
+    cell.textLabel.text = callHistory.phonenumber;
+    cell.detailTextLabel.text = callHistory.callform;
+    cell.timeLabel.text = callHistory.calltime;
     return cell;
 }
 

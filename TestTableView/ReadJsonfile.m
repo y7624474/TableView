@@ -9,14 +9,16 @@
 #import "ReadJsonfile.h"
 
 @implementation ReadJson
-+(NSMutableArray*)localfileWithContentsOfJSONString:(NSString*)fileLocation{
+
+-(NSMutableArray*)localfileWithContentsOfJSONString:(NSString*)fileLocation{
+    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:[fileLocation stringByDeletingPathExtension] ofType:[fileLocation pathExtension]];
     NSData* data = [NSData dataWithContentsOfFile:filePath];
     __autoreleasing NSError* error = nil;
-    id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
     
-    NSMutableArray *array=[NSMutableArray arrayWithArray:result];
-    return array;
+    NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+   
+    return [_callHistoryMapping mappingCallHistoryArray:result];
 }
 
 +(void)deleteWithContentsOfJSONString:(NSString*)fileLocation Index:(NSUInteger) index{

@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 TWer . All rights reserved.
 //
 
-#import "LableMod.h"
+#import "CallHistory.h"
 
-@implementation LableMod
+@implementation CallHistory
 
 @end

@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LableMod : NSObject
+@interface CallHistory : NSObject
 
-@property NSString* strtel;
-@property NSString* strfrom;
-@property NSString* strtime;
+@property NSString* phonenumber;
+@property NSString* callform;
+@property NSString* calltime;
 
 
 @end

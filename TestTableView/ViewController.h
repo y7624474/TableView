@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Service.h"
 #import "TimeCell.h"
-#import "LableMod.h"
+#import "CallHistory.h"
+
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic) NSMutableArray *dataList;
 @property (nonatomic) UITableView *callTableView;
+@property (nonatomic) UISwitch *switchbtn;
 
--(void)lableInit;
 @end
 

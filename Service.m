@@ -7,15 +7,19 @@
 //
 
 #import "Service.h"
+#import "CallHistoryMapping.h"
 
 @implementation Service
 -(NSMutableArray*)readJson:(NSString*)file
 {
-    return [ReadJson localfileWithContentsOfJSONString:file];
+    ReadJson *readJson = [ReadJson new];
+    readJson.callHistoryMapping = [[CallHistoryMapping alloc]initWithPhoneNumber:@"tel" And:@"from" And:@"time"];
+    return [readJson localfileWithContentsOfJSONString:file];
 }
 
--(NSMutableArray*)urlJson:(NSString*)url
+-(void)urlJson:(NSString*)url AsynBack:(Asyn) asynback
 {
-    return [UrlJsonfile netfileWithContentsOfJSONString:url];
+    UrlJsonfile *urlJsonfile = [UrlJsonfile new];
+    [urlJsonfile netfileWithContentsOfJSONString:url AsynBack:asynback];
 }
 @end

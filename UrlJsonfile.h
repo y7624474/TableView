@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface UrlJsonfile : NSObject
+typedef void (^Asyn)(NSURLResponse* response, NSData* data, NSError* connectionError);
 
-+(NSMutableArray*)netfileWithContentsOfJSONString:(NSString*)jsonurl;
+-(void)netfileWithContentsOfJSONString:(NSString*)jsonurl AsynBack:(Asyn) asynback;
 
 @end

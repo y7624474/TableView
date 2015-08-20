@@ -17,8 +17,9 @@
 		49F663201B841AA700FD99C1 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = 49F6631F1B841AA700FD99C1 /* call.json */; };
 		49F663261B84559600FD99C1 /* ReadJsonfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F663251B84559600FD99C1 /* ReadJsonfile.m */; };
 		49F6632A1B85626800FD99C1 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F663291B85626800FD99C1 /* Service.m */; };
-		49F6632E1B85691D00FD99C1 /* LableMod.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F6632D1B85691D00FD99C1 /* LableMod.m */; };
+		49F6632E1B85691D00FD99C1 /* CallHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F6632D1B85691D00FD99C1 /* CallHistory.m */; };
 		49F663311B856F9900FD99C1 /* UrlJsonfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F663301B856F9900FD99C1 /* UrlJsonfile.m */; };
+		49F663391B85D9D200FD99C1 /* CallHistoryMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F663381B85D9D200FD99C1 /* CallHistoryMapping.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +52,12 @@
 		49F663251B84559600FD99C1 /* ReadJsonfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadJsonfile.m; path = TestTableView/ReadJsonfile.m; sourceTree = "<group>"; };
 		49F663281B85626800FD99C1 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		49F663291B85626800FD99C1 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
-		49F6632C1B85691D00FD99C1 /* LableMod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LableMod.h; sourceTree = "<group>"; };
-		49F6632D1B85691D00FD99C1 /* LableMod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LableMod.m; sourceTree = "<group>"; };
+		49F6632C1B85691D00FD99C1 /* CallHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallHistory.h; sourceTree = "<group>"; };
+		49F6632D1B85691D00FD99C1 /* CallHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallHistory.m; sourceTree = "<group>"; };
 		49F6632F1B856F9900FD99C1 /* UrlJsonfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlJsonfile.h; sourceTree = "<group>"; };
 		49F663301B856F9900FD99C1 /* UrlJsonfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlJsonfile.m; sourceTree = "<group>"; };
+		49F663371B85D9D200FD99C1 /* CallHistoryMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallHistoryMapping.h; sourceTree = "<group>"; };
+		49F663381B85D9D200FD99C1 /* CallHistoryMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallHistoryMapping.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				49F663291B85626800FD99C1 /* Service.m */,
 				49F6632F1B856F9900FD99C1 /* UrlJsonfile.h */,
 				49F663301B856F9900FD99C1 /* UrlJsonfile.m */,
+				49F663371B85D9D200FD99C1 /* CallHistoryMapping.h */,
+				49F663381B85D9D200FD99C1 /* CallHistoryMapping.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -154,8 +159,8 @@
 		49F6632B1B8568DE00FD99C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				49F6632C1B85691D00FD99C1 /* LableMod.h */,
-				49F6632D1B85691D00FD99C1 /* LableMod.m */,
+				49F6632C1B85691D00FD99C1 /* CallHistory.h */,
+				49F6632D1B85691D00FD99C1 /* CallHistory.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -264,9 +269,10 @@
 				49F663261B84559600FD99C1 /* ReadJsonfile.m in Sources */,
 				4905B33F1B83342200169869 /* TimeCell.m in Sources */,
 				4905B31D1B82D80300169869 /* AppDelegate.m in Sources */,
-				49F6632E1B85691D00FD99C1 /* LableMod.m in Sources */,
+				49F6632E1B85691D00FD99C1 /* CallHistory.m in Sources */,
 				49F663311B856F9900FD99C1 /* UrlJsonfile.m in Sources */,
 				4905B31A1B82D80300169869 /* main.m in Sources */,
+				49F663391B85D9D200FD99C1 /* CallHistoryMapping.m in Sources */,
 				49F6632A1B85626800FD99C1 /* Service.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
