@@ -11,6 +11,8 @@
 #import "TimeCell.h"
 #import "CallHistory.h"
 
+#define LOCAL @"call.json"
+#define URL @"http://www.aliexprice.com/callhistory.index"
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic) NSMutableArray *dataList;
 @property (nonatomic) UITableView *callTableView;

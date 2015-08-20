@@ -16,10 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     service=[Service new];
-    
-    information= [service readJson:@"call.json"];
+    information= [service readJson:LOCAL];
     
     [self initView];
 
@@ -52,14 +50,14 @@
 - (void) switchValueChanged:(id)sender{
     if (!self.switchbtn.on) {
         [information removeAllObjects];
-        information= [service readJson:@"call.json"];
+        information= [service readJson:LOCAL];
     }
     else{
         [information removeAllObjects];
         
         [activityIndicator startAnimating];
         
-        [service urlJson:@"http://www.aliexprice.com/callhistory.index"
+        [service urlJson:URL
                             AsynBack:^(NSURLResponse *response, NSData *data, NSError *error){
                                 if (error) {
                                     NSLog(@"Httperror:%@", error.localizedDescription);
