@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface ReadJson : NSObject
-+(NSMutableArray*)dictionaryWithContentsOfJSONString:(NSString*)fileLocation;
++(NSMutableArray*)localfileWithContentsOfJSONString:(NSString*)fileLocation;
 +(void)deleteWithContentsOfJSONString:(NSString*)fileLocation Index:(NSUInteger) index;
 @end

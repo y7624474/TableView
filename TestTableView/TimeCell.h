@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TimeCell : UITableViewCell
-@property UILabel *nameLabel;
+@property UILabel *timeLabel;
 @end

@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Service.h"
+#import "TimeCell.h"
+#import "LableMod.h"
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic) NSMutableArray *dataList;
 @property (nonatomic) UITableView *callTableView;
-//+(NSDictionary*)dictionaryWithContentsOfJSONString:(NSString*)fileLocation;
+
+-(void)lableInit;
 @end
 

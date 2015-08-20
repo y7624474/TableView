@@ -19,8 +19,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        self.nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(270, 10, 40, 20)];
-        [self addSubview:self.nameLabel];
+        self.timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(270, 10, 80, 20)];
+        [self addSubview:self.timeLabel];
     }
     return self;
 }

@@ -11,6 +11,11 @@
 @implementation Service
 -(NSMutableArray*)readJson:(NSString*)file
 {
-    return [ReadJson dictionaryWithContentsOfJSONString:file];
+    return [ReadJson localfileWithContentsOfJSONString:file];
+}
+
+-(NSMutableArray*)urlJson:(NSString*)url
+{
+    return [UrlJsonfile netfileWithContentsOfJSONString:url];
 }
 @end

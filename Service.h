@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ReadJsonfile.h"
+#import "UrlJsonfile.h"
 @interface Service : NSObject
 -(NSMutableArray*)readJson:(NSString*)file;
+-(NSMutableArray*)urlJson:(NSString*)url;
 @end
