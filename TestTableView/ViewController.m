@@ -36,29 +36,33 @@
     
     activityIndicator = [[UIActivityIndicatorView alloc]
                          initWithActivityIndicatorStyle:
-                         UIActivityIndicatorViewStyleGray];
+                         UIActivityIndicatorViewStyleWhiteLarge];
+    activityIndicator.color = [UIColor blackColor];
     activityIndicator.center =self.view.center;
-    activityIndicator.hidden =YES;
-    [self.view addSubview:activityIndicator];
-    
     
     [self.view addSubview:self.switchbtn];
     [self.view addSubview:self.callTableView];
+    [self.view addSubview:activityIndicator];
+
    
 }
 
 - (void) switchValueChanged:(id)sender{
+    [information removeAllObjects];
     if (!self.switchbtn.on) {
-        [information removeAllObjects];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [activityIndicator stopAnimating];
+        });
         information= [service readJson:LOCAL];
     }
     else{
-        [information removeAllObjects];
-        
         [activityIndicator startAnimating];
         
         [service urlJson:URL
                             AsynBack:^(NSURLResponse *response, NSData *data, NSError *error){
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    [activityIndicator stopAnimating];
+                                });
                                 if (error) {
                                     NSLog(@"Httperror:%@", error.localizedDescription);
                                 }else{
@@ -68,9 +72,9 @@
                                     CallHistoryMapping *_callHistoryMapping = [[CallHistoryMapping alloc]initWithPhoneNumber:@"phonenumber" And:@"location" And:@"calltime"];
                                     
                                     information=[_callHistoryMapping mappingCallHistoryArray:result];
-                                    [self.callTableView reloadData];
-                                   
-//                                    [activityIndicator stopAnimating];
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [self.callTableView reloadData];
+                                    });
                                 }
                             }
                      ];

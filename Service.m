@@ -10,6 +10,8 @@
 #import "CallHistoryMapping.h"
 
 @implementation Service
+
+
 -(NSMutableArray*)readJson:(NSString*)file
 {
     ReadJson *readJson = [ReadJson new];
@@ -19,7 +21,8 @@
 
 -(void)urlJson:(NSString*)url AsynBack:(Asyn) asynback
 {
-    UrlJsonfile *urlJsonfile = [UrlJsonfile new];
-    [urlJsonfile netfileWithContentsOfJSONString:url AsynBack:asynback];
+    [[UrlJsonfile new] netfileWithContentsOfJSONString:url AsynBack:asynback];
 }
+
 @end
+
